@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HomePage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+  <body>
+     <pre>
+
+      {{Global}}
+       </pre>
+       <br>
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="card m-2" style="width: 18rem; background-color:red">
+              <div class="card-body">
+               <h5 class="card-title">New Confirmed</h5>
+               <p class="card-text">{{Global.NewConfirmed}}</p>
+              </div>
+              </div>
+
+              <div class="card m-2" style="width: 18rem; background-color:orange">
+                  <div class="card-body">
+                   <h5 class="card-title">Total Confirmed</h5>
+                   <p class="card-text">{{Global.TotalConfirmed}}</p>
+                  </div>
+                  </div>
+
+                  <div class="card m-2" style="width: 18rem; background-color:#DC143C">
+                      <div class="card-body">
+                       <h5 class="card-title">New Deathes</h5>
+                       <p class="card-text">{{Global.NewDeaths}}</p>
+                      </div>
+                      </div>
+
+                      <div class="card m-2" style="width: 18rem;background-color:#F08080">
+                          <div class="card-body">
+                           <h5 class="card-title">Total Deathes</h5>
+                           <p class="card-text">{{Global.TotalDeaths}}</p>
+                          </div>
+                          </div>
+
+                          <div class="card m-2" style="width: 18rem; background-color:#90EE90">
+                              <div class="card-body">
+                               <h5 class="card-title">New Recovered</h5>
+                               <p class="card-text">{{Global.NewRecovered}}</p>
+                              </div>
+                              </div>
+
+                              <div class="card m-2" style="width: 18rem; background-color:#7CFC00">
+                                  <div class="card-body">
+                                   <h5 class="card-title">Total Recovered</h5>
+                                   <p class="card-text">{{Global.TotalRecovered}}</p>
+                                  </div>
+                                  </div>
+
+
+                </div>
+                <table class="table">
+                  <thead>
+                  <th>S.No</th>
+                   <th>Country</th>
+                   <th>Total Confirmed</th>
+                   <th>Total Deathes</th>
+                   <th>Total Recovered</th>
+                  </thead>
+                <tbody>
+                {% for c in countries %}
+                <tr>
+                 <td>{{forloop.counter}}</td>
+                 <td>{{c.Country}}</td>
+                 <td>{{c.TotalConfirmed}}</td>
+                 <td>{{c.TotalDeaths}}</td>
+                 <td>{{c.TotalRecovered}}</td>
+                </tr>
+
+                  {% endfor %}
+                  </tbody>
+                </table>
+
+          </div>
+  </body>
+</html>
